@@ -29,7 +29,7 @@ Player* Match::getLoser() const {
 // play match
 void Match::playMatch() {
     if (!player1 || !player2) {
-        std::cerr << "Error: Match cannot be played without two players." << std::endl;
+        cerr << "Error: Match cannot be played without two players." << std::endl;
         return;
     }
 
