@@ -49,8 +49,12 @@ void Match::playMatch() {
         loser = player1;
     }
 
-    // mark loser as eliminated
-    loser->markEliminated();
+    // mark loser as eliminated if already in loser's bracket
+    if (loser->isEliminated()) {
+        loser->markEliminated();
+    } else {
+        loser->sendToLosers();
+    }
 }
 
 // get match summary

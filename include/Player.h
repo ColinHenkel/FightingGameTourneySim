@@ -7,6 +7,7 @@ class Player {
 private:
     int id; // unique id for each player
     std::string name; // name of player
+    bool inWinners; // track if player is in winners bracket
     bool eliminated; // track if player is eliminated from tournament
 
 public:
@@ -16,10 +17,12 @@ public:
     // getters
     int getId() const;
     std::string getName() const;
+    bool isInWinners() const;
     bool isEliminated() const;
 
     // setters
     void markEliminated();
+    void sendToLosers();
 
     // util
     void reset();
