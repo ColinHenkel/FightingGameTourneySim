@@ -50,10 +50,10 @@ void Match::playMatch() {
     }
 
     // mark loser as eliminated if already in loser's bracket
-    if (loser->isEliminated()) {
-        loser->markEliminated();
-    } else {
+    if (loser->isInWinners()) {
         loser->sendToLosers();
+    } else {
+        loser->markEliminated();
     }
 }
 
